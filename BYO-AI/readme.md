@@ -8,8 +8,11 @@ Once the model is deployed, it can be used in several situations, and in combina
 
 ### Considerations:
 Fast responses to user queries. To address speed, three techniques are leveraged.
+
 1.) Highly available containerized operations
+
 2.) Asynchronous operations where possible
+
 3.) Parallel processing where applicable
 
 In addition to speed, complex and customized operations can be implemented out as well.
@@ -22,8 +25,13 @@ Each part of the build process will include methods to test operations before pr
 This objective consists of 4 parts as illustrated below.
 
 1.) Build a REST API using Python Flask
+
 2.) Build and test a docker container (Postman is an alternative to docker)
+
 3.) Push the container to the IBM Cloud Registry
+
 4.) Deploy and manage the application using Code-Engine
+
 5.) Make application OpenAPI 3.0 Compliant
+
 
