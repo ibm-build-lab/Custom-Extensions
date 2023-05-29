@@ -114,6 +114,8 @@ most comfortable with.
 > Assume that the site will respond to <https://localhost:5000> and
 > subsequently defined site branches.
 
+![alt text](https://github.com/ibm-build-lab/Custom-Extensions/blob/main/images/byoai_picture_1.png)
+
 3.  Create a file called "requirements.txt" and paste in the following
     code. This is used by the Dockerfile to pull in the Python
     dependencies.
