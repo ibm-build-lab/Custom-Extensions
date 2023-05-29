@@ -119,9 +119,13 @@ most comfortable with.
 3.  Create a file called "requirements.txt" and paste in the following
     code. This is used by the Dockerfile to pull in the Python
     dependencies.
+    
+![alt text](https://github.com/ibm-build-lab/Custom-Extensions/blob/main/images/byoai_picture_2.png)
 
 4.  Create a file called "runapp.sh" and paste in the following code.
     This is used by the docker container to start the flask service.
+    
+![alt text](https://github.com/ibm-build-lab/Custom-Extensions/blob/main/images/byoai_picture_3.png)
 
 5.  Create a file called "Dockerfile" and paste in the following code.
     Note the use of "requirements.txt" within the file. Also, note pip3
@@ -132,6 +136,8 @@ most comfortable with.
 > information.
 >
 > <https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image>
+
+![alt text](https://github.com/ibm-build-lab/Custom-Extensions/blob/main/images/byoai_picture_4.png)
 
 **Operation Checks:**
 
