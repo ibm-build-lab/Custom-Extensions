@@ -115,25 +115,23 @@ most comfortable with.
 > subsequently defined site branches.
 
 ---
-**NOTE**
-from flask import Flask, request, jsonify   # Import necessary packages
-PORT = 5000					    # Specify the port the server will respond to
-app = Flask(__name__)			    # Define the app variable
-languages = [					    # Data for demonstration purposes
-    "English", "Spanish", "French", "German", "Italian", "Portuguese", "Swedish"
-]
-@app.route("/")				    # Handle the site home address
-def home():
-    return jsonify({"status": "online"})    # Return site status of online
+**Code**
 
-@app.route("/languages")			    # Return list of languages
-def get_languages():
-    return jsonify({"languages": languages})
-
-if __name__ == "__main__":			    # Start the server or listener operation
-    app.run(debug=True, host="0.0.0.0", port=PORT)
-![image](https://github.com/ibm-build-lab/Custom-Extensions/assets/89655719/49c08bb3-87b5-411a-9b9f-e738323ed5eb)
-
+>from flask import Flask, request, jsonify   # Import necessary packages
+>PORT = 5000					    # Specify the port the server will respond to
+>app = Flask(__name__)			    # Define the app variable
+>languages = ["English", "Spanish", "French", "German", "Italian", "Portuguese", "Swedish"]
+>    
+>@app.route("/")				    # Handle the site home address
+>def home():
+>    return jsonify({"status": "online"})    # Return site status of online
+>
+>@app.route("/languages")			    # Return list of languages
+>def get_languages():
+>    return jsonify({"languages": languages})
+>
+>if __name__ == "__main__":			    # Start the server or listener operation
+>    app.run(debug=True, host="0.0.0.0", port=PORT)
 ---
 
 3.  Create a file called "requirements.txt" and paste in the following
