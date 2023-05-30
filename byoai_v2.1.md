@@ -359,9 +359,9 @@ Set up environment variables for convenience:
 
 Rerun the following command and observe teh tagged image.
 
-'''
+```
 ../byoai% docker images | grep byoai-rest-api
-'''
+```
 ```
 byoai-rest-api 			        latest            b8d9a08180e5   2 days ago      922MB
 icr.io/djb-ns/ byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      922MB
@@ -369,31 +369,36 @@ icr.io/djb-ns/ byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      
 
 5.) Login to the IBM Cloud CLI and repository
 
-> a\. Click on the "person" icon and then click on the "Log in to CLI
-> and API" to get the CLI command to log in with. It will look like what
-> is shown below
->
-> [../ byoai % ibmcloud login -a https://cloud.ibm.com -u passcode -p
-> abcdefghij]{.mark}
->
-> ![](media/image6.png){width="5.4523261154855645in"
-> height="1.9677307524059493in"}
->
-> b\. Select the appropriate region from the list presented.
->
-> c\. Set the target resource group as appropriate
->
-> [../ byoai % ibmcloud target -g david-bacarella-rg]{.mark}
->
-> d\. Ensure you are targeting the correct IBM Cloud Container Registry
-> region.
->
-> [../ byoai % ibmcloud cr region-set us-south]{.mark}
->
-> e\. Log in to the IBM Could Container Registry.
->
-> [../ byoai % ibmcloud cr login]{.mark}
->
+   a. Click on the "person" icon and then click on the "Log in to CLI
+   and API" to get the CLI command to log in with. It will look like what
+   is shown below
+
+```
+   ../byoai% ibmcloud login -a https://cloud.ibm.com -u passcode -p abcdefghij
+```
+
+ ![](media/image6.png)
+ {width="5.4523261154855645in" height="1.9677307524059493in"}
+
+ b. Select the appropriate region from the list presented.
+
+ c. Set the target resource group as appropriate
+
+```
+ ../byoai% ibmcloud target -g david-bacarella-rg
+```
+
+ d. Ensure you are targeting the correct IBM Cloud Container Registry
+ region.
+
+ ../byoai% ibmcloud cr region-set us-south
+
+ e. Log in to the IBM Could Container Registry.
+
+``` 
+ ../byoai% ibmcloud cr login
+```
+
 > 6.) Push the tagged image to the registry which creates the
 > repository. It creates the repository within the namespace which is in
 > the registry.
