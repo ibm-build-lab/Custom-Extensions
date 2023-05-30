@@ -411,8 +411,10 @@ icr.io/djb-ns/byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      9
 
 7.) Check the IBM Cloud Registry. The uploaded container should be visible.  
 
-![]media/image7.png)
+![](media/image7.png)
 {width="6.5in" height="1.9180555555555556in"}
+
+
 
 IV. **Deploy and manage the application using Code-Engine**
 
