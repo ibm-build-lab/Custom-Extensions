@@ -300,20 +300,20 @@ II. **Build and Test Docker container**
 
 III. **Push image to the IBM Container Registry**
 
-> This process requires that basic set up of the IBM container registry
-> has already taken place.
->
-> 1.) Login to the IBM Cloud and select the "Container Registry"
-> resource as shown below.
->
-> ![Graphical user interface, website Description automatically
-> generated](media/image4.png){width="6.5in" height="3.9in"}
->
-> 2.) Check the Container Registry Namespace and document the following
-> information. The information provided below is to provide an example
-> of the information needed. Be sure to save the information so that it
-> can be accesses later.
->
+This process requires that basic set up of the IBM container registry
+has already taken place.
+
+1.) Login to the IBM Cloud and select the "Container Registry"
+resource as shown below.
+
+![Graphical user interface, website Description automatically
+generated](media/image4.png){width="6.5in" height="3.9in"}
+
+2.) Check the Container Registry Namespace and document the following
+information. The information provided below is to provide an example
+of the information needed. Be sure to save the information so that it
+can be accesses later.
+
 > Notes:
 
 -   The "repository" corresponds to one program being deployed and each
@@ -323,13 +323,9 @@ III. **Push image to the IBM Container Registry**
     the location of interest.
 
 > **Registry Name:** us.icr.io
->
 > **Namespace Name:** djb-ns
->
 > **Resource Group:** david-bacarell-rg
->
-> **Common Path:** us.icr.io/djb-ns/\[*repository-name*\] The docker
-> image that will be pushed
+> **Common Path:** us.icr.io/djb-ns/[repository-name] <-- The docker image that will be pushed image that will be pushed 
 >
 > ![A screenshot of a computer Description automatically
 > generated](media/image5.png){width="6.4569455380577425in"
