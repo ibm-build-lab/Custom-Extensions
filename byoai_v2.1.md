@@ -203,7 +203,8 @@ height="4.102828083989501in"}
     running the prompt is no longer available.
 
 ![Graphical user interface, text, application Description
-automatically generated]
+automatically generated](media/image3.png){width="6.083333333333333in"
+height="1.7638888888888888in"}
 
 4.  Open a browser and test using the following two URLs.
 
@@ -221,11 +222,15 @@ II. **Build and Test Docker container**
 
 1.  Run the following command to build the docker image.
 
+```
 > [../ byoai % docker build -t byoai-rest-api .]{.mark}
+```
 
 2.  Run the container image using the following command.
 
+```
 > [../ byoai % docker run -p 5000:5000 -it byoai-rest-api]{.mark}
+```
 
 3.  Open a browser and test using the following two URLs. Notice that we
     mapped the localhost port of 8080 to the container's port of 5000.
