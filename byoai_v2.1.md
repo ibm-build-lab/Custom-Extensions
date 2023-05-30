@@ -259,13 +259,13 @@ II. **Build and Test Docker container**
 1.  Run the following command to build the docker image.
 
 ```
-../byoai% docker build -t byoai-rest-api .
+docker build -t byoai-rest-api .
 ```
 
 2.  Run the container image using the following command.
 
 ```
-../byoai% docker run -p 5000:5000 -it byoai-rest-api
+docker run -p 5000:5000 -it byoai-rest-api
 ```
 
 3.  Open a browser and test using the following two URLs. Notice that we
@@ -335,7 +335,7 @@ generated](media/image5.png)
 Find the local image using the following command on the local machine. The output should be similar to what is shown below.
 
 ```
-../ byoai % docker images \| grep byoai-rest-api
+docker images | grep byoai-rest-api
 ```
 
 ```
@@ -344,23 +344,23 @@ byoai-rest-api           latest                     b8d9a08180e5   2 days ago   
 
 4.) Tag the image for the destination repository.
 
-Set up environment variables for convenience:
+Set up environment variables for convenience (information is from step 2):
 
 ```
-../byoai% export REGISTRY=us.icr.io  <-- information from step 2
-../byoai% export NAMESPACE=djb-ns <-- information from step 2
+export REGISTRY=us.icr.io
+export NAMESPACE=djb-ns
 ```
 > Note: The name of the image created is the first parameter after the
 > tag subcommand. Notice that the image is being tagged to create a
 > repository with a versioned image.
 ```
-../byoai% docker tag byoai-rest-api/${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0  
+docker tag byoai-rest-api/${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0  
 ```
 
 Rerun the following command and observe teh tagged image.
 
 ```
-../byoai% docker images | grep byoai-rest-api
+docker images | grep byoai-rest-api
 ```
 ```
 byoai-rest-api 			        latest            b8d9a08180e5   2 days ago      922MB
