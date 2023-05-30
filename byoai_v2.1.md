@@ -598,8 +598,8 @@ class LanguageResponse(Schema):
 ```
     @app.route("/languages")
     def get_languages():
-    """Get list of languages
-    ---
+    \"\"\"Get list of languages
+    \-\-\-
     get:
         description: Get list of languages
         responses:
@@ -608,8 +608,7 @@ class LanguageResponse(Schema):
                 content:
                     application/json:
                         schema: LanguageResponse
-    """
-
+    \"\"\"                    
     languages = [
         {"language": "English"},
         {"language": "Spanish"},
