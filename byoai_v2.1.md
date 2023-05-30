@@ -437,7 +437,8 @@ automatically generated](media/image9.png){width="4.892896981627296in" height="2
     used.
 
 ![Graphical user interface, application Description automatically
-generated](media/image10.png){width="6.5in" height="4.214583333333334in"}
+generated](media/image10.png)
+{width="6.5in" height="4.214583333333334in"}
 
 4.  Scroll down to the next section as shown below. Ensure "Container
     image" is selected. Specify the image reference, and make sure you
@@ -462,7 +463,8 @@ generated](media/image11.png){width="6.5in" height="4.529861111111111in"}
     click "Done".
 
 ![Graphical user interface Description automatically generated with
-medium confidence](media/image12.png){width="6.5in" height="4.172916666666667in"}
+medium confidence](media/image12.png)
+{width="6.5in" height="4.172916666666667in"}
 
 6.  The application is deployed. Upon completion, test the application.
     Select the "Send request" button and observe the response. An
@@ -471,12 +473,14 @@ medium confidence](media/image12.png){width="6.5in" height="4.172916666666667in"
 > Note: The response is "{"status": "online}" just as we found in the step 1 of the procedure.
 
 ![Graphical user interface, application Description automatically
-generated](media/image13.png){width="6.5in" height="4.397916666666666in"}
+generated](media/image13.png)
+{width="6.5in" height="4.397916666666666in"}
 
 7.  Click on the "Open URL" option.
 
 ![Graphical user interface, application Description automatically
-generated](media/image14.png){width="4.833265529308837in" height="2.129012467191601in"}
+generated](media/image14.png)
+{width="4.833265529308837in" height="2.129012467191601in"}
 
 8.  Add "/languages" to the end of the URL and hit the enter key. Again, you should see something like the following.
 
@@ -487,38 +491,40 @@ generated](media/image14.png){width="4.833265529308837in" height="2.129012467191
   
 V.  **Open API 3.0 Enablement**
 
-> Open API 3.0 enablement consists of augmenting the REST service to
-> comply with the Open API 3.0 standard. Open API 3.0 (formerly known as
-> Swagger) is a standard for computer-to-computer documentation of a
-> REST interface. This allows programs to extend their capabilities with
-> little to no code modifications. An example of this can been seen
-> using Watson Assistant. One can "extend" Watson Assistant using an
-> Open API 3.0 compliant interface. The user of the extension need only
-> reference one of the API routes directly in the Watson GUI.
->
-> To demonstrate, the simple REST API developed earlier will be
-> augmented. One can use several available options to implement the Open
-> API 3.0 specifications. This is one way to do it.
->
+Open API 3.0 enablement consists of augmenting the REST service to
+comply with the Open API 3.0 standard. Open API 3.0 (formerly known as
+Swagger) is a standard for computer-to-computer documentation of a
+REST interface. This allows programs to extend their capabilities with
+little to no code modifications. An example of this can been seen
+using Watson Assistant. One can "extend" Watson Assistant using an
+Open API 3.0 compliant interface. The user of the extension need only
+reference one of the API routes directly in the Watson GUI.
+
+To demonstrate, the simple REST API developed earlier will be
+augmented. One can use several available options to implement the Open
+API 3.0 specifications. This is one way to do it.
+
 > **Note:** You can copy app-openapi.py to app.py and Dockerfile-openapi
 > to Dockerfile respectively. However, it is a good exercise to manually
 > make these modifications so that you will have a good basis for more
 > complex configurations.
->
-> 1.) Add required libraries -- Each of the libraries serves a specific
-> purpose in the creation of an Open API 3.0 specification. If
-> interested in more detail, please research them on-line.
->
-> **from** apispec **import** APISpec\
-> **from** apispec.ext.marshmallow **import** MarshmallowPlugin\
-> **from** apispec_webframeworks.flask **import** FlaskPlugin\
-> **from** flask **import** Flask, jsonify, render_template,
-> send_from_directory\
-> **from** marshmallow **import** Schema, fields\
-> **from** werkzeug.utils **import** secure_filename
->
-> The original code is provided for reference below.
->
+
+1.) Add required libraries -- Each of the libraries serves a specific
+    purpose in the creation of an Open API 3.0 specification. If
+    interested in more detail, please research them on-line.
+
+    ```
+    **from** apispec **import** APISpec  
+    **from** apispec.ext.marshmallow **import** MarshmallowPlugin  
+    **from** apispec_webframeworks.flask **import** FlaskPlugin  
+    **from** flask **import** Flask, jsonify, render_template,send_from_directory  
+    **from** marshmallow **import** Schema, fields  
+    **from** werkzeug.utils **import** secure_filename  
+    ```
+
+    The original code is provided at .
+    
+    
 > 2.) Change the app variable and add the spec variable as shown below.
 >
 > app = Flask(\_\_name\_\_, template_folder=**\'./swagger/templates\'**)
