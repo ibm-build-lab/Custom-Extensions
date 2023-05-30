@@ -315,12 +315,11 @@ of the information needed. Be sure to save the information so that it
 can be accesses later.
 
 > Notes:
-
--   The "repository" corresponds to one program being deployed and each
-    of its versions.
-
--   Make sure you are in the desired "Location". In this case, Dallas is
-    the location of interest.
+>
+>-   The "repository" corresponds to one program being deployed and each
+>    of its versions.
+>-   Make sure you are in the desired "Location". In this case, Dallas is
+>    the location of interest.
 
 **Registry Name:** us.icr.io  
 **Namespace Name:** djb-ns  
@@ -328,8 +327,8 @@ can be accesses later.
 **Common Path:** us.icr.io/djb-ns/[repository-name] <-- The docker image that will be pushed image that will be pushed   
 
 ![A screenshot of a computer Description automatically
-generated](media/image5.png){width="6.4569455380577425in"
-height="3.5616688538932633in"}
+generated](media/image5.png)
+{width="6.4569455380577425in"height="3.5616688538932633in"}
 
 3.) Find the local image to be pushed.
 
