@@ -114,7 +114,7 @@ most comfortable with.
 > Assume that the site will respond to <https://localhost:5000> and
 > subsequently defined site branches.
 
----
+```
 **Code**
 
 >from flask import Flask, request, jsonify   # Import necessary packages
@@ -132,7 +132,7 @@ most comfortable with.
 >
 >if __name__ == "__main__":			    # Start the server or listener operation
 >    app.run(debug=True, host="0.0.0.0", port=PORT)
----
+```
 
 3.  Create a file called "requirements.txt" and paste in the following
     code. This is used by the Dockerfile to pull in the Python
