@@ -259,13 +259,13 @@ II. **Build and Test Docker container**
 1.  Run the following command to build the docker image.
 
 ```
-> ../ byoai % docker build -t byoai-rest-api .
+../byoai% docker build -t byoai-rest-api .
 ```
 
 2.  Run the container image using the following command.
 
 ```
-> ../ byoai % docker run -p 5000:5000 -it byoai-rest-api
+../byoai% docker run -p 5000:5000 -it byoai-rest-api
 ```
 
 3.  Open a browser and test using the following two URLs. Notice that we
