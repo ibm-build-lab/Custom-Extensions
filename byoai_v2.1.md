@@ -654,12 +654,12 @@ class LanguageResponse(Schema):
      create two directories named static and templates respectively.
 
 > Note: Recall the following line of code.
-
+  
 ```
      app = Flask(__name__, template_folder='./swagger/templates')
 ```
-
-     Notice that the directory structure you just created is specified in the app definition.
+  
+     Notice that the directory structure you just created is specified in the app definition.  
 
 ![](media/image15.png)
 {width="3.5883552055993in" height="2.5618788276465443in"}
