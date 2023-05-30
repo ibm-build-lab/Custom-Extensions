@@ -424,76 +424,67 @@ access to and is familiar with the basic operations of the IBM Cloud.
 1.  Open the IBM Code Engine as shown below. Select \[Overview\]
 
 ![Graphical user interface, text Description automatically
-generated](media/image8.png){width="4.9071708223972in"
-height="3.2536220472440944in"}
+generated](media/image8.png){width="4.9071708223972in" height="3.2536220472440944in"}
 
 2.  Select the \[Start Creating\] menu option as shown below.
 
-> ![Graphical user interface, application, website Description
-> automatically generated](media/image9.png){width="4.892896981627296in"
-> height="2.920571959755031in"}
+![Graphical user interface, application, website Description
+automatically generated](media/image9.png){width="4.892896981627296in" height="2.920571959755031in"}
 
 3.  Create an "Application", provide a unique name for the application,
     and either create a new project or select an existing one. In this
     case, the preexisting project called "code-engine-alpha" is being
     used.
 
-> ![Graphical user interface, application Description automatically
-> generated](media/image10.png){width="6.5in"
-> height="4.214583333333334in"}
+![Graphical user interface, application Description automatically
+generated](media/image10.png){width="6.5in" height="4.214583333333334in"}
 
 4.  Scroll down to the next section as shown below. Ensure "Container
     image" is selected. Specify the image reference, and make sure you
     specify the port exposed in the Dockerfile configuration file. The
     port is essential.
 
-> Select the "Configure image" button to the right the "Image reference"
-> field.
->
+   Select the "Configure image" button to the right the "Image reference" field.  
+  
 > Note: Recall the information collected in step 3
 >
 > **Registry Name:** us.icr.io
->
 > **Namespace Name:** djb-ns
->
 > **Resource Group:** david-bacarell-rg
->
-> **Common Path:** us.icr.io/djb-ns/\[*repository-name*\] The docker
-> image that will be pushed
->
-> ![Graphical user interface, application Description automatically
-> generated](media/image11.png){width="6.5in"
-> height="4.529861111111111in"}
+> **Common Path:** us.icr.io/djb-ns/[repository-name] <-- The docker image that will be pushed
+
+![Graphical user interface, application Description automatically
+generated](media/image11.png){width="6.5in" height="4.529861111111111in"}
 
 5.  Be sure to create a new registry access key if needed. Just select
     the option and follow the prompts. Ensure the values for Registry
     server, Namespace, Repository, and Tag are what is expected. Then
     click "Done".
 
-> ![Graphical user interface Description automatically generated with
-> medium confidence](media/image12.png){width="6.5in"
-> height="4.172916666666667in"}
+![Graphical user interface Description automatically generated with
+medium confidence](media/image12.png){width="6.5in" height="4.172916666666667in"}
 
 6.  The application is deployed. Upon completion, test the application.
     Select the "Send request" button and observe the response. An
     example of what you should see is below.
 
-> Note: The response is "{"status": "online}" just as we found in the
-> step 1 of the procedure.
+> Note: The response is "{"status": "online}" just as we found in the step 1 of the procedure.
 
 ![Graphical user interface, application Description automatically
 generated](media/image13.png){width="6.5in" height="4.397916666666666in"}
 
 7.  Click on the "Open URL" option.
 
-> ![Graphical user interface, application Description automatically
-> generated](media/image14.png){width="4.833265529308837in"
-> height="2.129012467191601in"}
+![Graphical user interface, application Description automatically
+generated](media/image14.png){width="4.833265529308837in" height="2.129012467191601in"}
 
-8.  Add "/languages" to the end of the URL and hit the enter key.
+8.  Add "/languages" to the end of the URL and hit the enter key. Again, you should see something like the following.
 
-> {\"languages\":\[\"English\",\"French\",\"German\",\"Italian\",\"Portuguese\",\"Swedish\"\]}
-
+```
+{"languages":["English","French","German","Italian","Portuguese","Swedish"]}
+```
+  
+  
 V.  **Open API 3.0 Enablement**
 
 > Open API 3.0 enablement consists of augmenting the REST service to
