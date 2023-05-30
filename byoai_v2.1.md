@@ -526,130 +526,142 @@ API 3.0 specifications. This is one way to do it.
     
 2.) Change the app variable and add the spec variable as shown below.
 
-app = Flask(\_\_name\_\_, template_folder=**\'./swagger/templates\'**)
+    ``` 
+    app = Flask(__name__, template_folder=*'./swagger/templates')  
+  
+    spec = APISpec(  
+        title='flask-api-swagger-doc\',  
+        version='1.0.0',  
+        openapi_version='3.0.2',  
+        plugins=[FlaskPlugin(), MarshmallowPlugin()]  
+    )  
+    ```
 
-spec = APISpec(\
-title=**\'flask-api-swagger-doc\'**,\
-version=**\'1.0.0\'**,\
-openapi_version=**\'3.0.2\'**,\
-plugins=\[FlaskPlugin(), MarshmallowPlugin()\]\
-)
+**Operation Check:** The code should look like this now.
 
-> **Operation Check:** The code should look like this now.
->
-> 3.) Add routes for Open API access as shown below.
->
-> \@app.route(**\'/api/swagger.json\'**)\
-> **def** create_swagger_spec():\
-> **return** jsonify(spec.to_dict())
->
-> \@app.route(**\"/docs\"**)
->
-> \@app.route(**\"/docs/\<path:path\>\"**)\
-> **def** swagger_docs(path=**None**):\
-> **if not** path **or** path == **\'index.html\'**:\
-> **return** render_template(**\'index.html\'**,
-> base_url=**\'/docs\'**)\
-> **else**:\
-> **return** send_from_directory(**\'./swagger/static\'**,
-> secure_filename(path))
+```
+    from apispec import APISpec
+    from apispec.ext.marshmallow import MarshmallowPlugin
+    from apispec_webframeworks.flask import FlaskPlugin
+    from flask import Flask, jsonify, render_template, send_from_directory
+    from marshmallow import Schema, fields
+    from werkzeug.utils import secure_filename
 
-4.) Add marshmallow support by adding the following section of code.
+    PORT = 5000
 
-Marshmallow is a python package that specifically handles data
+    app = Flask(__name__, template_folder='./swagger/templates')
 
-serialization and deserialization.
+    spec = APISpec(
+        title='flask-api-swagger-doc',
+        version='1.0.0',
+        openapi_version='3.0.2',
+        plugins=[FlaskPlugin(), MarshmallowPlugin()]
+    )
+```
 
-> *\# Marshmallow support\
-> ***class** LanguageResponseSchema(Schema):\
-> language = fields.Str()
->
-> 5.) Add a class definition for the language route response.
->
-> **class** LanguageResponse(Schema):\
-> language_list = fields.List(fields.Nested(LanguageResponseSchema))
->
-> 6.) For each route, document feature as necessary. For this example,
-> the
->
-> specification is quite simple; however, more complex definitions will
->
-> be required for most applications. Leave the "/" route unaffected by
->
-> change.
->
-> \@app.route(**\"/languages\"**)\
-> **def** get_languages():
->
-> *\"\"\"Get list of **languages**\
-> \-\--\
-> get:\
-> description: Get list of languages\
-> responses:\
-> 200:\
-> description: Return a language **list**\
-> content:\
-> application/json:\
-> schema: LanguageResponse\
-> \"\"\"*
->
-> languages = \[\
-> {**\"language\"**: **\"English\"**},\
-> {**\"language\"**: **\"Spanish\"**},\
-> {**\"language\"**: **\"French\"**},\
-> {**\"language\"**: **\"German\"**},\
-> {**\"language\"**: **\"Italian\"**},\
-> {**\"language\"**: **\"Portuguese\"**},\
-> {**\"language\"**: **\"Swedish\"**}\
-> \]
->
-> **return** LanguageResponse().dump({**\"language_list\"**: languages})
->
-> **Operation Check**: The code should look like as shown below.
->
-> 7.) Leave the following route unaffected by change. When the code is
->
-> tested, it will be observed that this function will work; however,
->
-> it will not be seen by the OpenAPI tools.
->
-> \@app.route(**\"/\"**)\
-> **def** home():\
-> **return** jsonify({\
-> **\"status\"**: **\"online\"\
-> **})
->
-> 8.) Add the following to which registers the API. Note the "view"
->
-> variable. It is given the value of the name of the function defined
->
-> under the language route.
->
-> *\# Register API\
-> ***with** app.test_request_context():\
-> spec.path(view=language_listing)
->
-> 9.) Add the following to the bottom of the file.
->
-> **if** \_\_name\_\_ == **\"\_\_main\_\_\"**:\
-> app.run(debug=**True**, host=**\"0.0.0.0\"**, port=PORT)
->
-> 10.) Add swagger subdirectory to your project. This should be created
-> at
->
-> the level where the app.py file resides. Under the swagger directory,
->
-> create two directories named static and templates respectively.
->
+3.) Add routes for Open API access as shown below.
+
+```
+    @app.route('/api/swagger.json')
+    def create_swagger_spec():
+        return jsonify(spec.to_dict())
+
+    @app.route("/docs")
+
+    @app.route("/docs/<path:path>")
+    def swagger_docs(path=None):
+        if not path or path == 'index.html':
+            return render_template('index.html', base_url='/docs')
+        else:
+            return send_from_directory('./swagger/static', secure_filename(path))
+```
+
+4.) Add marshmallow support by adding the following section of code.  Marshmallow is a python 
+    package that specifically handles data serialization and deserialization.
+
+```
+# Marshmallow support
+class LanguageResponseSchema(Schema):
+    language = fields.Str()
+```
+
+5.) Add a class definition for the language route response.
+
+```
+class LanguageResponse(Schema):
+    language_list = fields.List(fields.Nested(LanguageResponseSchema))
+```
+
+6.) For each route, document feature as necessary. For this example, the specification is quite simple; however, 
+    more complex definitions will be required for most applications. Leave the "/" route unaffected by change.
+
+```
+    @app.route("/languages")
+    def get_languages():
+    """Get list of languages
+    ---
+    get:
+        description: Get list of languages
+        responses:
+            200:
+                description: Return a language list
+                content:
+                    application/json:
+                        schema: LanguageResponse
+    """
+
+    languages = [
+        {"language": "English"},
+        {"language": "Spanish"},
+        {"language": "French"},
+        {"language": "German"},
+        {"language": "Italian"},
+        {"language": "Portuguese"},
+        {"language": "Swedish"}
+    ]
+
+    return LanguageResponse().dump({"language_list": languages})
+```
+
+7.) Leave the following route unaffected by change. When the code is tested, it will be observed 
+    that this function will work; however, it will not be seen by the OpenAPI tools.
+
+```
+    @app.route("/")
+    def home():
+        return jsonify({
+            "status": "online"
+        })
+```
+
+8.) Add the following to which registers the API. Note the "view" variable. It is given the value 
+    of the name of the function defined under the language route.
+
+```
+    # Register API
+    with app.test_request_context():
+        spec.path(view=language_listing)
+```
+
+9.) Add the following to the bottom of the file.
+
+```
+    if __name__ == "__main__":
+        app.run(debug=True, host="0.0.0.0", port=PORT)
+```
+
+10.) Add swagger subdirectory to your project. This should be created
+     at the level where the app.py file resides. Under the swagger directory,
+     create two directories named static and templates respectively.
+
 > Note: Recall the following line of code.
->
-> [app = Flask(\_\_name\_\_,
-> template_folder=**\'./swagger/templates\'**)]{.mark}
->
-> Notice that the directory structure you just created is specified in
->
-> the app definition.
->
+
+```
+     app = Flask(__name__, template_folder='./swagger/templates')
+```
+
+     Notice that the directory structure you just created is specified in the app definition.
+
 > ![](media/image15.png){width="3.5883552055993in"
 > height="2.5618788276465443in"}
 >
