@@ -348,17 +348,19 @@ Set up environment variables for convenience (information is from step 2):
 
 ```
 export REGISTRY=us.icr.io
+```
+```
 export NAMESPACE=djb-ns
 ```
+
 > Note: The name of the image created is the first parameter after the
 > tag subcommand. Notice that the image is being tagged to create a
 > repository with a versioned image.
 ```
-docker tag byoai-rest-api/${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0  
+docker tag byoai-rest-api ${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0  
 ```
 
 Rerun the following command and observe teh tagged image.
-
 ```
 docker images | grep byoai-rest-api
 ```
@@ -374,7 +376,7 @@ icr.io/djb-ns/byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      9
    is shown below
 
 ```
-   ../byoai% ibmcloud login -a https://cloud.ibm.com -u passcode -p abcdefghij
+   ibmcloud login -a https://cloud.ibm.com -u passcode -p abcdefghij
 ```
 
  ![](media/image6.png)
