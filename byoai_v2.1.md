@@ -213,7 +213,43 @@ height="1.7638888888888888in"}
 -   <http://localhost:5000/languages>
 
 > Respectively, you should see the following output or something very
-> similar.
+> similar
+
+
+```
+{
+  "status": "online"
+}
+```
+
+```
+{
+  "Language_list": [
+    {
+      "language": "English"
+    },
+    {
+      "language": "Spanish"
+    },
+    {
+      "language": "French"
+    },
+    {
+      "language": "German"
+    },
+    {
+      "language": "Italian"
+    },
+    {
+      "language": "Portuguese"
+    },
+    {
+      "language": "Swedish"
+    }
+  ]
+}
+```
+
 
 II. **Build and Test Docker container**
 
@@ -223,13 +259,13 @@ II. **Build and Test Docker container**
 1.  Run the following command to build the docker image.
 
 ```
-> [../ byoai % docker build -t byoai-rest-api .]{.mark}
+> ../ byoai % docker build -t byoai-rest-api .
 ```
 
 2.  Run the container image using the following command.
 
 ```
-> [../ byoai % docker run -p 5000:5000 -it byoai-rest-api]{.mark}
+> ../ byoai % docker run -p 5000:5000 -it byoai-rest-api
 ```
 
 3.  Open a browser and test using the following two URLs. Notice that we
@@ -240,6 +276,27 @@ II. **Build and Test Docker container**
 -   <http://localhost:8080/languages>
 
 > Respectively, you should see the following output.
+
+```
+{
+  "status": "online"
+}
+```
+
+```
+{
+  "languages": [
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Italian",
+    "Portuguese",
+    "Swedish"
+  ]
+}
+```
+
 
 III. **Push image to the IBM Container Registry**
 
