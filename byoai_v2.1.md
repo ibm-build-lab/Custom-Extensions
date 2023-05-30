@@ -117,18 +117,18 @@ most comfortable with.
 ```
 from flask import Flask, request, jsonify   # Import necessary packages  
 PORT = 5000					    # Specify the port the server will respond to  
-app = Flask(__name__)			    # Define the app variable  
+app = Flask(__name__)			# Define the app variable  
 languages = ["English", "Spanish", "French", "German", "Italian", "Portuguese", "Swedish"]  
     
 @app.route("/")				    # Handle the site home address  
 def home():  
     return jsonify({"status": "online"})    # Return site status of online  
 
-@app.route("/languages")			    # Return list of languages  
+@app.route("/languages")	    # Return list of languages  
 def get_languages():  
     return jsonify({"languages": languages})  
 
-if __name__ == "__main__":			    # Start the server or listener operation  
+if __name__ == "__main__":	    # Start the server or listener operation  
     app.run(debug=True, host="0.0.0.0", port=PORT)  
 ```
 
@@ -136,12 +136,18 @@ if __name__ == "__main__":			    # Start the server or listener operation
     code. This is used by the Dockerfile to pull in the Python
     dependencies.
     
-![alt text](https://github.com/ibm-build-lab/Custom-Extensions/blob/main/images/byoai_picture_2.png)
+```
+Flask==2.2.3  
+Flask-JSON==0.3.5  
+```
 
 4.  Create a file called "runapp.sh" and paste in the following code.
     This is used by the docker container to start the flask service.
     
-![alt text](https://github.com/ibm-build-lab/Custom-Extensions/blob/main/images/byoai_picture_3.png)
+```
+export FLASK_APP=app  
+flask run  
+```
 
 5.  Create a file called "Dockerfile" and paste in the following code.
     Note the use of "requirements.txt" within the file. Also, note pip3
