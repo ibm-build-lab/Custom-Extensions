@@ -670,52 +670,95 @@ class LanguageResponse(Schema):
 
      https://github.com/ibm-build-lab/Custom-Extensions
 
+
 12.) Modify the ./swagger/static/initializer.js file.
 
-     a. Set the url to the URL where the code will run. In this case, the
+     Set the url to the URL where the code will run. In this case, the
      the code is configured to run on a local machine.
 
-> 13.) Modify the ./swagger/templates/index.html file as shown below.
->
-> 14.) Test -- Run the application, and then access the following links
-> using a browser. Representative screen shots are provided.
->
-> a\. http://localhost:5000/
->
-> This route is unknown to the OpenAPI tooling. Note that it is still
-> responsive.
->
-> ![Graphical user interface, application Description automatically
-> generated with medium
-> confidence](media/image16.png){width="5.727060367454068in"
-> height="2.287153324584427in"}
->
-> b\. <http://localhost:5000/languages>
->
-> This link provides results for the main route of the application.
->
-> ![Graphical user interface, text, application Description
-> automatically
-> generated](media/image17.png){width="5.7784930008748905in"
-> height="3.0182753718285213in"}
->
-> c\. <http://localhost:5000/docs>
->
-> Enter the world of swagger.
->
-> ![Graphical user interface, text, application, email Description
-> automatically
-> generated](media/image18.png){width="5.123836395450569in"
-> height="3.0704691601049867in"}
->
-> d\. Click on the "Get" button, and then click on the "Try it out"
-> button. Afterwards, click on the "Execute" button.
->
-> ![Graphical user interface, application Description automatically
-> generated](media/image19.png){width="6.143314741907262in"
-> height="3.5947583114610673in"}
+```
+    window.onload = function() {
+      //<editor-fold desc="Changeable Configuration Block">
 
-15\. Deploy the application using steps 1 through 4 to see it working on
-the Cloud. Simply
+      // the following lines will be replaced by docker/configurator, when it runs in a docker-container
+      window.ui = SwaggerUIBundle({
+        url: "http://localhost:5000/api/swagger.json",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+      });
 
-> change the tag to 2.0 to retain both versions of the container.
+      //</editor-fold>
+    };
+```
+
+13.) Modify the ./swagger/templates/index.html file as shown below.
+
+```
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Swagger UI</title>
+        <link rel="stylesheet" type="text/css" href="{{base_url}}/swagger-ui.css" />
+        <link rel="stylesheet" type="text/css" href="{{base_url}}/index.css" />
+        <link rel="icon" type="image/png" href="{{base_url}}/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="{{base_url}}/favicon-16x16.png" sizes="16x16" />
+      </head>
+
+      <body>
+        <div id="swagger-ui"></div>
+        <script src="{{base_url}}/swagger-ui-bundle.js" charset="UTF-8"> </script>
+        <script src="{{base_url}}/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+        <script src="{{base_url}}/swagger-initializer.js" charset="UTF-8"> </script>
+      </body>
+    </html>
+```
+
+
+14.) Test -- Run the application, and then access the following links
+     using a browser. Representative screen shots are provided.
+
+     a. http://localhost:5000/
+
+     This route is unknown to the OpenAPI tooling. Note that it is still responsive.
+
+![Graphical user interface, application Description automatically
+generated with medium
+confidence](media/image16.png)
+{width="5.727060367454068in" height="2.287153324584427in"}
+
+    b. <http://localhost:5000/languages>
+
+        This link provides results for the main route of the application.
+
+![Graphical user interface, text, application Description
+automatically
+generated](media/image17.png)
+{width="5.7784930008748905in" height="3.0182753718285213in"}
+
+    c. http://localhost:5000/docs
+
+       Enter the world of swagger.
+
+![Graphical user interface, text, application, email Description
+automatically
+generated](media/image18.png)
+{width="5.123836395450569in" height="3.0704691601049867in"}
+
+     d. Click on the "Get" button, and then click on the "Try it out"
+        button. Afterwards, click on the "Execute" button.
+
+![Graphical user interface, application Description automatically
+generated](media/image19.png)
+{width="6.143314741907262in" height="3.5947583114610673in"}
+
+15.) Deploy the application using steps 1 through 4 to see it working on the Cloud. Simply
+     change the tag to 2.0 to retain both versions of the container.
