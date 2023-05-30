@@ -322,26 +322,31 @@ can be accesses later.
 -   Make sure you are in the desired "Location". In this case, Dallas is
     the location of interest.
 
-> **Registry Name:** us.icr.io
-> **Namespace Name:** djb-ns
-> **Resource Group:** david-bacarell-rg
-> **Common Path:** us.icr.io/djb-ns/[repository-name] <-- The docker image that will be pushed image that will be pushed 
->
-> ![A screenshot of a computer Description automatically
-> generated](media/image5.png){width="6.4569455380577425in"
-> height="3.5616688538932633in"}
->
-> 3.) Find the local image to be pushed.
->
-> Find the local image using the following command on the local machine.
-> The output should be similar to what is shown below.
->
-> [../ byoai % docker images \| grep byoai-rest-api]{.mark}
->
-> 4.) Tag the image for the destination repository.
->
-> Set up environment variables for convenience:
->
+**Registry Name:** us.icr.io  
+**Namespace Name:** djb-ns  
+**Resource Group:** david-bacarell-rg  
+**Common Path:** us.icr.io/djb-ns/[repository-name] <-- The docker image that will be pushed image that will be pushed   
+
+![A screenshot of a computer Description automatically
+generated](media/image5.png){width="6.4569455380577425in"
+height="3.5616688538932633in"}
+
+3.) Find the local image to be pushed.
+
+Find the local image using the following command on the local machine. The output should be similar to what is shown below.
+
+```
+../ byoai % docker images \| grep byoai-rest-api
+```
+
+```
+byoai-rest-api           latest                     b8d9a08180e5   2 days ago      922MB
+```
+
+4.) Tag the image for the destination repository.
+
+Set up environment variables for convenience:
+
 > [../ byoai %]{.mark} [export REGISTRY=us.icr.io]{.mark} Recall
 > information from step 2
 >
