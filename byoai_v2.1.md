@@ -662,20 +662,19 @@ class LanguageResponse(Schema):
 
      Notice that the directory structure you just created is specified in the app definition.
 
-> ![](media/image15.png){width="3.5883552055993in"
-> height="2.5618788276465443in"}
->
-> 11.) Copy files within "static" and "templates" directories from the
-> GitHub repository located at the following link.
->
-> <https://github.com/ibm-build-lab/Custom-Extensions>
->
-> 12.) Modify the ./swagger/static/initializer.js file.
->
-> a\. Set the url to the URL where the code will run. In this case, the
->
-> the code is configured to run on a local machine.
->
+![](media/image15.png)
+{width="3.5883552055993in" height="2.5618788276465443in"}
+
+11.) Copy files within "static" and "templates" directories from the GitHub repository 
+     located at the following link.
+
+     https://github.com/ibm-build-lab/Custom-Extensions
+
+12.) Modify the ./swagger/static/initializer.js file.
+
+     a. Set the url to the URL where the code will run. In this case, the
+     the code is configured to run on a local machine.
+
 > 13.) Modify the ./swagger/templates/index.html file as shown below.
 >
 > 14.) Test -- Run the application, and then access the following links
