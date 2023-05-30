@@ -522,20 +522,19 @@ API 3.0 specifications. This is one way to do it.
     **from** werkzeug.utils **import** secure_filename  
     ```
 
-    The original code is provided at .
+    The original code is provided at https://github.com/ibm-build-lab/Custom-Extensions/blob/main/BYO-AI/app-simple.py 
     
-    
-> 2.) Change the app variable and add the spec variable as shown below.
->
-> app = Flask(\_\_name\_\_, template_folder=**\'./swagger/templates\'**)
->
-> spec = APISpec(\
-> title=**\'flask-api-swagger-doc\'**,\
-> version=**\'1.0.0\'**,\
-> openapi_version=**\'3.0.2\'**,\
-> plugins=\[FlaskPlugin(), MarshmallowPlugin()\]\
-> )
->
+2.) Change the app variable and add the spec variable as shown below.
+
+app = Flask(\_\_name\_\_, template_folder=**\'./swagger/templates\'**)
+
+spec = APISpec(\
+title=**\'flask-api-swagger-doc\'**,\
+version=**\'1.0.0\'**,\
+openapi_version=**\'3.0.2\'**,\
+plugins=\[FlaskPlugin(), MarshmallowPlugin()\]\
+)
+
 > **Operation Check:** The code should look like this now.
 >
 > 3.) Add routes for Open API access as shown below.
