@@ -598,8 +598,8 @@ class LanguageResponse(Schema):
 ```
     @app.route("/languages")
     def get_languages():
-    \"\"\"Get list of languages
-    \-\-\-
+    """Get list of languages
+    ---
     get:
         description: Get list of languages
         responses:
@@ -608,7 +608,7 @@ class LanguageResponse(Schema):
                 content:
                     application/json:
                         schema: LanguageResponse
-    \"\"\"                    
+    """                    
     languages = [
         {"language": "English"},
         {"language": "Spanish"},
@@ -718,12 +718,11 @@ class LanguageResponse(Schema):
         <script src="{{base_url}}/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
         <script src="{{base_url}}/swagger-initializer.js" charset="UTF-8"> </script>
       </body>
-    </html>
+    </html>  
 ```
 
 
-14.) Test -- Run the application, and then access the following links
-     using a browser. Representative screen shots are provided.
+14.) Test: Run the application, and then access the following links using a browser. Representative screen shots are provided.
 
      a. http://localhost:5000/
 
