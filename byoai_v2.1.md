@@ -346,26 +346,29 @@ byoai-rest-api           latest                     b8d9a08180e5   2 days ago   
 
 Set up environment variables for convenience:
 
-> [../ byoai %]{.mark} [export REGISTRY=us.icr.io]{.mark} Recall
-> information from step 2
->
-> [../ byoai %]{.mark} [export NAMESPACE=djb-ns]{.mark} Recall
-> information from step 2
->
+```
+../byoai% export REGISTRY=us.icr.io  <-- information from step 2
+../byoai% export NAMESPACE=djb-ns <-- information from step 2
+```
 > Note: The name of the image created is the first parameter after the
 > tag subcommand. Notice that the image is being tagged to create a
 > repository with a versioned image.
->
-> [../ byoai % docker tag byoai-rest-api
-> \${REGISTRY}/\${NAMESPACE}/byoai-rest-api:1.]{.mark}0
->
-> Rerun [../ byoai % docker images \| grep byoai-rest-api]{.mark}
-> (Observe tagged image)
->
-> Sdf
->
-> 5.) Login to the IBM Cloud CLI and repository
->
+```
+../byoai% docker tag byoai-rest-api/${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0  
+```
+
+Rerun the following command and observe teh tagged image.
+
+'''
+../byoai% docker images | grep byoai-rest-api
+'''
+```
+byoai-rest-api 			        latest            b8d9a08180e5   2 days ago      922MB
+icr.io/djb-ns/ byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      922MB
+```
+
+5.) Login to the IBM Cloud CLI and repository
+
 > a\. Click on the "person" icon and then click on the "Log in to CLI
 > and API" to get the CLI command to log in with. It will look like what
 > is shown below
