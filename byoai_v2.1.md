@@ -387,20 +387,20 @@ icr.io/djb-ns/byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      9
  c. Set the target resource group as appropriate
 
 ```
- ../byoai% ibmcloud target -g david-bacarella-rg
+    ibmcloud target -g david-bacarella-rg
 ```
 
  d. Ensure you are targeting the correct IBM Cloud Container Registry
  region.
 
 ```
- ../byoai% ibmcloud cr region-set us-south
+    ibmcloud cr region-set us-south
 ```
 
  e. Log in to the IBM Could Container Registry.
 
 ``` 
- ../byoai% ibmcloud cr login
+    ibmcloud cr login
 ```
 
 6.) Push the tagged image to the registry which creates the
@@ -408,7 +408,7 @@ icr.io/djb-ns/byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      9
     the registry.  
 
 ```
-../byoai% docker push ${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0 
+    docker push ${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0 
 ```
 
 7.) Check the IBM Cloud Registry. The uploaded container should be visible.  
