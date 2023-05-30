@@ -401,17 +401,18 @@ icr.io/djb-ns/byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      9
  ../byoai% ibmcloud cr login
 ```
 
-> 6.) Push the tagged image to the registry which creates the
-> repository. It creates the repository within the namespace which is in
-> the registry.
->
-> [../ byoai % docker push
-> \${REGISTRY}/\${NAMESPACE}/byoai-rest-api:1.]{.mark}0
->
-> 7.) Check the IBM Cloud Registry. The uploaded container should be
-> visible.
->
-> ![](media/image7.png){width="6.5in" height="1.9180555555555556in"}
+6.) Push the tagged image to the registry which creates the
+    repository. It creates the repository within the namespace which is in
+    the registry.  
+
+```
+../byoai% docker push ${REGISTRY}/${NAMESPACE}/byoai-rest-api:1.0 
+```
+
+7.) Check the IBM Cloud Registry. The uploaded container should be visible.  
+
+![]media/image7.png)
+{width="6.5in" height="1.9180555555555556in"}
 
 IV. **Deploy and manage the application using Code-Engine**
 
@@ -477,10 +478,9 @@ height="3.2536220472440944in"}
 
 > Note: The response is "{"status": "online}" just as we found in the
 > step 1 of the procedure.
->
-> ![Graphical user interface, application Description automatically
-> generated](media/image13.png){width="6.5in"
-> height="4.397916666666666in"}
+
+![Graphical user interface, application Description automatically
+generated](media/image13.png){width="6.5in" height="4.397916666666666in"}
 
 7.  Click on the "Open URL" option.
 
