@@ -187,24 +187,23 @@ CMD python app.py runserver 0.0.0.0:5000
 1.  The workspace created should look like what is highlighted by the
     orange box.
 
-> ![Graphical user interface, text, application Description
-> automatically generated](media/image1.png){width="6.5in"
-> height="4.372222222222222in"}
+![Graphical user interface, text, application Description
+automatically generated](media/image1.png){width="6.5in"
+height="4.372222222222222in"}
 
 2.  Run the application. Open a terminal instance and run "python3
     app.py" as shown in the illustration below.
 
-> ![Graphical user interface, text, application Description
-> automatically generated](media/image2.png){width="6.275938320209974in"
-> height="4.102828083989501in"}
+![Graphical user interface, text, application Description
+automatically generated](media/image2.png){width="6.275938320209974in"
+height="4.102828083989501in"}
 
 3.  The terminal will respond with something like below. Notice that the
     server is running on <http://127.0.0.1:5000>. Since the server is
     running the prompt is no longer available.
 
-> ![Graphical user interface, text, application Description
-> automatically generated](media/image3.png){width="6.083333333333333in"
-> height="1.7638888888888888in"}
+![Graphical user interface, text, application Description
+automatically generated]
 
 4.  Open a browser and test using the following two URLs.
 
