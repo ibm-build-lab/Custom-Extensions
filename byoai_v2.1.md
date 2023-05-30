@@ -364,7 +364,7 @@ Rerun the following command and observe teh tagged image.
 ```
 ```
 byoai-rest-api 			        latest            b8d9a08180e5   2 days ago      922MB
-icr.io/djb-ns/ byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      922MB
+icr.io/djb-ns/byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      922MB
 ```
 
 5.) Login to the IBM Cloud CLI and repository
@@ -391,7 +391,9 @@ icr.io/djb-ns/ byoai-rest-api 	1.0               b8d9a08180e5   2 days ago      
  d. Ensure you are targeting the correct IBM Cloud Container Registry
  region.
 
+```
  ../byoai% ibmcloud cr region-set us-south
+```
 
  e. Log in to the IBM Could Container Registry.
 
